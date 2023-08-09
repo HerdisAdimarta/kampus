@@ -7,6 +7,8 @@ import { MahasiswaModule } from './mahasiswa/mahasiswa.module';
 import { Mahasiswa } from './mahasiswa/entities/mahasiswa.entity';
 import { Dosen } from './dosen/entities/dosen.entity';
 import { DosenModule } from './dosen/dosen.module';
+import { Fakultas } from './fakultas/entities/fakultas.entity';
+import { FakultasModule } from './fakultas/fakultas.module';
 
 
 @Module({
@@ -18,11 +20,12 @@ import { DosenModule } from './dosen/dosen.module';
       username: 'root',
       password: '',
       database: 'kampus',
-      entities: [Mahasiswa, Dosen],
+      entities: [Mahasiswa, Dosen, Fakultas],
       synchronize: true,
     }),
     MahasiswaModule,
     DosenModule,
+    FakultasModule,
   ],
   controllers: [AppController],
   providers: [AppService],
