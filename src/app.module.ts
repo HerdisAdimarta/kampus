@@ -5,6 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { MahasiswaModule } from './mahasiswa/mahasiswa.module';
 import { Mahasiswa } from './mahasiswa/entities/mahasiswa.entity';
+import { Dosen } from './dosen/entities/dosen.entity';
+import { DosenModule } from './dosen/dosen.module';
 
 
 @Module({
@@ -16,10 +18,11 @@ import { Mahasiswa } from './mahasiswa/entities/mahasiswa.entity';
       username: 'root',
       password: '',
       database: 'kampus',
-      entities: [Mahasiswa],
+      entities: [Mahasiswa, Dosen],
       synchronize: true,
     }),
     MahasiswaModule,
+    DosenModule,
   ],
   controllers: [AppController],
   providers: [AppService],
